@@ -131,7 +131,7 @@ travis_wait() {
   local result
 
   {
-    wait $cmd_pid 2>/dev/null
+    wait $cmd_pid &>/dev/null
     result=$?
     ps -p$jigger_pid &>/dev/null && kill $jigger_pid &>/dev/null
   }
